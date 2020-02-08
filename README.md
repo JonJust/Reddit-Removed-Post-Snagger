@@ -1,6 +1,8 @@
 # Reddit-Removed-Post-Snagger
 Watches the modlog of a subreddit, and reposts removed posts in a target subreddit.
 
+Written in Python, published to GitHub 2/8/2020
+
 INSTRUCTIONS:
    Make <username> a mod on subreddit to be crawled. This will allow the bot access to the mod log.
    Make sure to have your reddit app registered, plug your client id and secret client into this script.
