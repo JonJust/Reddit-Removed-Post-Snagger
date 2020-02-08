@@ -50,7 +50,7 @@ def main():
                     if log.action == 'removelink':
                         str = "https://old.reddit.com/" + log.target_permalink
                         print(str)
-                        title = 'le "' + log.target_title + '" rage'
+                        title = log.target_title
                         Submission = reddit.submission(url=str)
                         print(Submission.url)
                         print(title)
