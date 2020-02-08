@@ -39,6 +39,7 @@ def main():
         try:
             start_time = time.time()
             for log in subreddit.mod.stream.log():
+                
                 if log.created_utc > start_time:
                     print("action: {}, Mod: {}".format(log.action, log.mod))
                     print("description: {}, details: {}".format(log.description, log.details))
@@ -72,6 +73,7 @@ def main():
 
                     print('=============================================')
                     print('')
+                    
         except Exception as e:
             traceback.print_exc() #Should only be happen when reddit servers stutter
 
