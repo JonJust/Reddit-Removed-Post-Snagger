@@ -56,16 +56,16 @@ def main():
 
                         if not Submission.is_self:
                             print('checking if repost.... stage 1')
-                            isNewPost = 'true'
+                            isNewPost = True
 
                             for submission in targetreddit.new(limit=5):
                                 print(submission.title)
                                 print('checking if repost.... stage 2')
                                 if submission.title == title:
-                                    isNewPost = 'false'
+                                    isNewPost = False
                                     print('doublepost')
 
-                            if isNewPost == 'true':
+                            if isNewPost == True:
                                 print('Posting....')
                                 newLink = Submission.url
                                 targetreddit.submit(title, url=newLink)
