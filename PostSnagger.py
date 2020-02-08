@@ -1,3 +1,5 @@
+#Copyright Jon Just 2/8/2020
+
 import praw
 import time
 import traceback
