@@ -1,4 +1,6 @@
-#Copyright Jon Just 2/8/2020
+# Copyright Jon Just 2/8/2020
+# Please feel free to edit, distribute, or run this code to your hearts content, but
+# contact me if you intend to profit off of it.
 
 import praw
 import time
