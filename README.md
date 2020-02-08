@@ -20,6 +20,6 @@ INSTRUCTIONS:
        ---
     
         author:
-                name: <username>
+                name: <username of bot>
             action: approve
             action_reason: user whitelist
