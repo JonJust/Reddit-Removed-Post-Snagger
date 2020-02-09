@@ -31,14 +31,14 @@ def main():
     #        action: approve
     #        action_reason: user whitelist
 
-    subreddit = reddit.subreddit('<ENTER SUBREDDIT TO BE CRAWLED HERE>')#subreddit to be crawled
-    targetreddit = subreddit = reddit.subreddit('<ENTER SUBREDDIT TO BE POSTED IN HERE>')#Subreddit to be posted to
+  
+    targetreddit = subreddit = reddit.subreddit('<ENTER SUBREDDIT TO BE POSTED IN HERE>')#Subreddit to be posted to << EDIT THIS LINE
 
     while True:
         print('Initiating....')
         try:
             start_time = time.time()
-            for log in subreddit.mod.stream.log():
+            for log in reddit.subreddit('<ENTER SUBREDDIT TO BE CRAWLED HERE>').mod.stream.log(): #Sub to be crawled << EDIT THIS LINE
                 
                 if log.created_utc > start_time:
                     print("action: {}, Mod: {}".format(log.action, log.mod))
