@@ -31,14 +31,14 @@ def main():
     #        action: approve
     #        action_reason: user whitelist
 
-    crawlreddit = reddit.subreddit('<ENTER SUBREDDIT TO BE CRAWLED HERE>') #Sub to be crawled << EDIT THIS LINE
-    targetreddit = reddit.subreddit('<ENTER SUBREDDIT TO BE POSTED IN HERE>')#Subreddit to be posted to << EDIT THIS LINE
+    hostSub = reddit.subreddit('<ENTER SUBREDDIT TO BE CRAWLED HERE>') #Sub to be crawled << EDIT THIS LINE
+    targetSub = reddit.subreddit('<ENTER SUBREDDIT TO BE POSTED IN HERE>')#Subreddit to be posted to << EDIT THIS LINE
 
     while True:
         print('Initiating....')
         try:
             start_time = time.time()
-            for log in crawlreddit.mod.stream.log():
+            for log in hostSub.mod.stream.log():
                 
                 if log.created_utc > start_time:
                     print("action: {}, Mod: {}".format(log.action, log.mod))
@@ -59,7 +59,7 @@ def main():
                             print('checking if repost.... stage 1')
                             isNewPost = True
 
-                            for submission in targetreddit.new(limit=5):
+                            for submission in targetSub.new(limit=5):
                                 print(submission.title)
                                 print('checking if repost.... stage 2')
                                 if submission.title == title:
@@ -69,7 +69,7 @@ def main():
                             if isNewPost == True:
                                 print('Posting....')
                                 newLink = Submission.url
-                                targetreddit.submit(title, url=newLink)
+                                targetSub.submit(title, url=newLink)
 
                     print('=============================================')
                     print('')
