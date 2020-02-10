@@ -32,15 +32,15 @@ def main():
     #        action_reason: user whitelist
 
     hostSub = reddit.subreddit('<ENTER SUBREDDIT TO BE CRAWLED HERE>') #Sub to be crawled << EDIT THIS LINE
-    targetSub = reddit.subreddit('<ENTER SUBREDDIT TO BE POSTED IN HERE>')#Subreddit to be posted to << EDIT THIS LINE
+    targetSub = reddit.subreddit('<ENTER SUBREDDIT TO BE POSTED IN HERE>') #Sub to be posted to << EDIT THIS LINE
 
     while True:
         print('Initiating....')
         try:
-            start_time = time.time()
+            startTime = time.time()
             for log in hostSub.mod.stream.log():
                 
-                if log.created_utc > start_time:
+                if log.created_utc > startTime:
                     print("action: {}, Mod: {}".format(log.action, log.mod))
                     print("description: {}, details: {}".format(log.description, log.details))
                     print("Link: {}, body: {}".format(log.target_permalink, log.target_body))
